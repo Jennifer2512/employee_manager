@@ -1,0 +1,92 @@
+p {
+	margin: 0;
+	padding: 0;
+}
+.pe-container,
+.pe-container-signup {
+	margin: 125px auto 0;
+	width: 350px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	border: 2px solid #ddd;
+	border-radius: 10px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	padding: 25px;
+}
+
+.pe-container-signup {
+	padding: 0;
+	max-width: 45%;
+	margin: 50px auto 0;
+	font-size: 15px;
+	border: none;
+	border-radius: none;
+	box-shadow: none;
+	height: 382px;
+}
+.pe-container-signup .container-form h4 {
+	margin-bottom: 0;
+}
+
+.pe-container-signup .container-form .span-div {
+	padding: 10px;
+	border-top: 1px solid #ddd;
+	margin-bottom: 0;
+}
+.pe-container-signup .container-form .span-div:nth-child(2) {
+	border-top: none;
+}
+.container-form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-evenly;
+	height: 100%;
+}
+
+.container-form h4 {
+	margin: 0 0 10px;
+}
+
+.label {
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+input,
+select {
+	border: 1px solid #000;
+	border-radius: 3px;
+	width: 55%;
+	height: 28px;
+}
+
+.forgot-pass {
+	margin-top: 10px;
+}
+.error {
+	font-size: 15px;
+	color: red;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.pe-container-signup .error {
+	text-align: right;
+	padding-right: 15px;
+	margin-bottom: 3px;
+}
+.span-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+@media only screen and (max-width: 600px) {
+	.pe-container-signup {
+		max-width: 70%;
+	}
+}

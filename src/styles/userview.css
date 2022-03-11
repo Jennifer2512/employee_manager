@@ -1,0 +1,19 @@
+.container-user {
+	width: 40%;
+	height: auto;
+	margin: 100px auto 0;
+	padding: 20px;
+	background: #fff;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	border-radius: 10px;
+}
+.span {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.span p {
+	margin: 0 !important;
+}

@@ -1,0 +1,31 @@
+.container-view {
+	background-color: #414141;
+	padding: 5px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	width: 100%;
+}
+
+.container-view p {
+	margin: 0 !important;
+}
+
+.container-btn button {
+	margin-left: 5px;
+}
+@media only screen and (max-width: 900px) {
+  .container-view{
+    padding: 8px;
+  }
+  .container-view h5{
+    font-size: 15px;
+  }
+  .container-view button{
+    font-size: 7px;
+  }
+  .container-view p{
+    font-size: 13px !important;
+  }
+}

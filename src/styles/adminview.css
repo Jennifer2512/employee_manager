@@ -1,0 +1,132 @@
+.container-admin {
+	border: 1.2px solid #000;
+	border-radius: 5px;
+	width: 95%;
+	margin: 50px auto 0;
+}
+.container-box-user {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1.1px solid #ddd;
+}
+.container-box-user:last-child {
+	border-bottom: none;
+}
+.header-row {
+	border-bottom: 1px solid #000;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header-row h4 {
+	border-left: 1px solid #ddd;
+	width: 200px;
+	height: 50px;
+	padding: 15px 20px;
+	text-align: center;
+	margin: 0;
+	font-size: 16px;
+}
+.info,
+.num-err {
+	border-left: 1px solid #ddd;
+	padding: 0px 20px;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.info-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.info-items button {
+	background: none;
+	font-weight: bolder;
+	font-size: 23px;
+}
+.info-items button:hover {
+	color: #004196;
+}
+.info-name {
+	font-weight: bolder;
+}
+.info-red {
+	font-weight: bolder;
+	color: red;
+}
+.num-err {
+	display: block;
+	background-color: red;
+}
+.normal {
+	display: none;
+}
+.num-error {
+	text-align: center !important;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: -6px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+.btn-action {
+	border-left: 1px solid #ddd;
+	height: 50px;
+	width: 200px;
+	padding: 10px;
+	text-align: center;
+}
+.btn-action button {
+	color: #fff;
+	font-size: 18px;
+	padding: 0 10px;
+	text-align: center;
+}
+.btn-action button:hover {
+	color: #fff;
+}
+.mobile {
+	display: none;
+}
+@media only screen and (max-width: 900px) {
+	.container-admin {
+		max-width: 100%;
+		margin: 20px auto;
+	}
+	.container-box-user {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.header-row {
+		display: none;
+	}
+	.info,
+	.btn-action {
+		border-left: none;
+		display: flex;
+		justify-content: space-between;
+	}
+	.mobile {
+		display: block;
+	}
+	.btn-action button {
+		margin: 0 auto;
+	}
+	.info-items button,
+	.info-items p {
+		margin-left: 15px;
+	}
+}
