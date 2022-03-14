@@ -40,6 +40,7 @@ function Login() {
 	useEffect(() => {
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formErrors]);
 
 	const validate = (values) => {

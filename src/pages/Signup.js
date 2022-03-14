@@ -26,7 +26,6 @@ function Signup() {
 			email,
 			password
 		).then(function (userFirebase) {
-			console.log('User ' + userFirebase.uid + ' created successfully!');
 			return userFirebase;
 		});
 		const docuRef = doc(firestore, `users/${infoUser.user.uid}`);
@@ -79,6 +78,7 @@ function Signup() {
 	useEffect(() => {
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
 		}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [formErrors]);
 
 	const validate = (values) => {

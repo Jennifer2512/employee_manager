@@ -20,6 +20,11 @@ function App() {
 		const docuRef = doc(firestore, `users/${uid}`);
 		const docuEncode = await getDoc(docuRef);
 		const infoRol = docuEncode.data().rol;
+		// if (typeof docuEncode.data().rol !== 'null') {
+		// 	return infoRol;
+		// } else {
+		// 	alert('fail');
+		// }
 		const fullName = docuEncode.data().fullname;
 		const totalDay = docuEncode.data().totalday;
 		const takenDay = docuEncode.data().takenday;
@@ -54,7 +59,7 @@ function App() {
 
 	return (
 		<Routes>
-			<Route path="/" exact element={user ?  <Home  user={user} /> : <Login />} />
+			<Route path="/" exact element={user ? <Home user={user} /> : <Login />} />
 			<Route path="forgot-password" element={<ForgotPassword />} />
 		</Routes>
 	);

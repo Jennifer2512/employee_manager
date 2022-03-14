@@ -13,6 +13,7 @@ import {
 } from 'firebase/firestore';
 import firebaseApp from '../firebase';
 import { Button } from 'react-bootstrap';
+import HeaderRow from './HeaderRow';
 
 function Tabs() {
 	const firestore = getFirestore(firebaseApp);
@@ -27,7 +28,6 @@ function Tabs() {
 		collection(firestore, 'users'),
 		where('rol', '==', 'user')
 	);
-
 	const getUsers = async () => {
 		const data = await getDocs(usersCollectionRef);
 		setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -108,14 +108,7 @@ function Tabs() {
 			<div className="content-tabs">
 				<div className={toggleState === 1 ? 'active-content' : 'content'}>
 					<div className="container-admin">
-						<div className="header-row">
-							<h4>#</h4>
-							<h4>Name</h4>
-							<h4>Total day</h4>
-							<h4>Taken day</h4>
-							<h4>Remaining day</h4>
-							<h4>Action</h4>
-						</div>
+						<HeaderRow />
 						{users.map((user, index) => {
 							return (
 								<div className="container-box-user">
@@ -127,10 +120,15 @@ function Tabs() {
 										<p className="mobile">Name:</p>
 										<p>{user.fullname}</p>
 									</div>
-									<div className={user.totalday >= 0 ? 'info' : 'num-err'}>
+									<div className="info">
 										<p className="mobile">Total day:</p>
-										<div className="info-items">
+										<div
+											className={
+												user.totalday >= 1 ? 'info-items' : 'info-items1'
+											}
+										>
 											<button
+												className={user.totalday >= 1 ? '' : 'dis'}
 												onClick={() =>
 													decreaseTotal(
 														user.id,
@@ -154,15 +152,17 @@ function Tabs() {
 												+
 											</button>
 										</div>
-										<p className={user.totalday >= 0 ? 'normal' : 'num-error'}>
-											*Invalid number
-										</p>
 									</div>
 
-									<div className={user.takenday >= 0 ? 'info' : 'num-err'}>
+									<div className="info">
 										<p className="mobile">Taken day:</p>
-										<div className="info-items">
+										<div
+											className={
+												user.takenday >= 1 ? 'info-items' : 'info-items1'
+											}
+										>
 											<button
+												className={user.takenday >= 1 ? '' : 'dis'}
 												onClick={() =>
 													decreaseTaken(
 														user.id,
@@ -186,9 +186,6 @@ function Tabs() {
 												+
 											</button>
 										</div>
-										<p className={user.takenday >= 0 ? 'normal' : 'num-error'}>
-											*Invalid number
-										</p>
 									</div>
 									<div className="info">
 										<p className="mobile">Remaining day:</p>
